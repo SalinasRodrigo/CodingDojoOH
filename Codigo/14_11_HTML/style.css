@@ -1,0 +1,31 @@
+*{
+    background-color: rgb(248, 224, 252);
+    margin-bottom: 5px;
+}
+label{
+    color: rebeccapurple;
+}
+
+input[type="text"] {
+    border: 1px solid rebeccapurple;
+    border-radius: 20px;
+}
+
+input[type="text"]:focus {
+    color: white;
+    background-color: purple;
+}
+
+input[type="submit"] {
+    border: none;
+    color: white;
+    background-color: purple;
+    border-radius: 20px;
+}
+
+select {
+    border: none;
+    color: white;
+    background-color: purple;
+    border-radius: 20px;
+}

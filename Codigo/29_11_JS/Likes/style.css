@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+    
+/* Clase fixed-width container que se "autocentrará" a sí misma */
+.container {
+    width: 850px;
+    margin: 0 auto;
+}
+header{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    color: white;
+}
+main h1{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cuerpo{
+    display: flex;
+    justify-content: space-between;
+}
+.perfil .tarjeta{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 240px;
+    height: 350px;
+    border: 3px solid;
+}
+.tarjeta img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid;
+    margin-bottom: 50px;
+}
+.tarjeta a{
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+.flexible{
+    display: flex;
+    justify-content: center;
+}
+.cuerpo{
+    display: flex;
+}
+.post{
+    width: 560px;
+    height: 180px;
+    border: 3px solid;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+    margin:10px;
+}
+.title h2{
+    font-size: 27px;
+}
+.like{
+    display: flex;
+    align-items: center;
+}
+.like a{
+    margin-right: 10px;
+}
+.like button{
+    margin-left: 20px;
+    box-shadow: 3px 3px 0px black;
+    width: 100px;
+    height: 35px;
+    background-color: #ffd966;
+}
+.like button:hover{
+    filter: brightness(1.2);
+}
+.post .text{
+    margin: 10px;
+    padding-top:20px;
+    padding-right: 20px;
+}
+.text p{
+    font-size: 18px;
+}

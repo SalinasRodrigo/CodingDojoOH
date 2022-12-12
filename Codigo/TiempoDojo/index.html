@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>TiempoDojo</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h2 class="nav-title">TiempoDojo</h2>
+            <ul class="nav-links">
+                <li><a href="#" onclick="alert('Cargando informe meteorológico…')">Asunción</a></li>
+                <li><a href="#" onclick="alert('Cargando informe meteorológico…')">Fnd. de la Mora</a></li>
+                <li><a href="#" onclick="alert('Cargando informe meteorológico…')">San lorenzo</a></li>
+            </ul> 
+        </nav>
+    </header>
+    <main>
+        <div class="titulo">
+            <h1>Capiata</h1>
+            <div>
+                <label>Mostrar la temperatura en: </label>
+                <select name="unidda_temp" onchange="cambioMdedida(this)">
+                    <option>ºC</option>
+                    <option>ºF</option>
+                </select>
+            </div>
+        </div>
+        <div class="tarjetas">
+            <div class="dia">
+                <div class="flexible">
+                    <h2>Hoy</h2>
+                </div>
+                <div class="flexible">
+                    <img src="assets/some_clouds.png" alt="imgen de temperatura">
+                </div>
+                <div class="flexible">
+                    <p>nublado</p>
+                </div>
+                <div class="temperatura" id="dia_1">
+                    <p class="maxima">33º</p>
+                    <p class="minima">22º</p>
+                </div>
+            </div>
+            <div class="dia">
+                <div class="flexible">
+                    <h2>Mañana</h2>
+                </div>
+                <div class="flexible">
+                    <img src="assets/some_rain.png" alt="imgen de temperatura">
+                </div>
+                <div class="flexible">
+                    <p>chaparrones</p>
+                </div>
+                <div class="temperatura" id="dia_2">
+                    <p class="maxima">32º</p>
+                    <p class="minima">25º</p>
+                </div>
+            </div>
+            <div class="dia">
+                <div class="flexible">
+                    <h2>Viernes</h2>
+                </div>
+                <div class="flexible">
+                    <img src="assets/some_sun.png" alt="imgen de temperatura">
+                </div>
+                <div class="flexible">
+                    <p>soleado</p>
+                </div>
+                <div class="temperatura" id="dia_3">
+                    <p class="maxima">34º</p>
+                    <p class="minima">23º</p>
+                </div>
+            </div>
+            <div class="dia">
+                <div class="flexible">
+                    <h2>Sabado</h2>
+                </div>
+                <div class="flexible">
+                    <img src="assets/some_sun.png" alt="imgen de temperatura">
+                </div>
+                <div class="flexible">
+                    <p>soleado</p>
+                </div>
+                <div class="temperatura" id="dia_4">
+                    <p class="maxima">33º</p>
+                    <p class="minima">25º</p>
+                </div>
+            </div>
+        </div>
+        <div id="cookie">
+            <img src="assets/cookie.png" alt="imagend de una cookie">
+            <div class="texto">
+                <h2>Alto ahí! Es el cookie time</h2>
+                <p>Usamos cookies (tristemente no de las que se pueden comer) para personalizar
+                    el contenido y los anuncios, para promover funciones de redes sociales y analizar nuestro
+                    trafico. <a href="#">Leer más...</a> 
+                </p>
+            </div>
+            <button onclick="removeCookie()">
+                Acepto
+            </button>
+        </div>
+    </main>
+</body>
+</html>

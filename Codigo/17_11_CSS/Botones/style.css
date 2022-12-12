@@ -1,0 +1,36 @@
+
+#box-1{
+    display: block;
+    color: mediumaquamarine;
+    margin-bottom: 10px;
+    background-color: rgba(247, 243, 243, 0.979);
+    width: 150px;
+    height: 30px;
+    border: 2px solid mediumaquamarine;
+    border-radius: 25px;
+    font-weight: 900;
+}
+
+#box-2{
+    display: block;
+    color: #ffff;
+    background-color: mediumaquamarine;
+    margin-bottom: 10px;
+    border-color: mediumaquamarine;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+
+#box-3{
+    display: block;
+    color: #ffff;
+    text-align: center;
+    background-color:royalblue;
+    margin-bottom: 10px;
+    width: 180px;
+    height: 35px;
+    border: 2px solid black;
+    box-shadow: 5px 5px rgba(0, 0, 0);
+}

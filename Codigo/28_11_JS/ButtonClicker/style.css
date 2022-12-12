@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+    
+/* Clase fixed-width container que se "autocentrará" a sí misma */
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+/*Nav-bar*/
+nav{
+    margin-bottom: 10px;
+    background-color: #cccccc;
+    width: 100%;
+    height: 60px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+
+}
+.nav-title{
+    color: black;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+}
+nav h1{
+    margin-left: 30px;
+}
+.btn{
+    margin-right: 30px;
+    box-shadow: 3px 3px 0px black;
+    width: 100px;
+    height: 30px;
+    background-color: #2b78e4;
+
+}
+.btn:hover{
+    filter: brightness(1.2);
+}
+.search{
+    padding: 10px; 
+    width: 500px;
+    height: 30px;
+}
+
+/* Main */
+main{
+    display: flex;
+    justify-content: space-between;
+}
+.colum_1{
+    width: 500px;
+
+}
+.colum_2{
+    width: 300px;
+
+}
+/*Entrada*/
+.entrada{
+    
+    margin-top: 20px;
+    width: 600px;
+    height: 200px;
+    border-style: solid;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    
+}
+.entrada h2, em, p{
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+.entrada button{
+    margin-left: 20px;
+    box-shadow: 3px 3px 0px black;
+    width: 100px;
+    height: 35px;
+    background-color: #ffd966;
+}
+.entrada button:hover{
+    filter: brightness(1.2);
+}
+.descripcion{
+    flex: 5;
+    margin: 20px;
+}
+.descripcion p{
+    font-size: 20px;
+}
+/* ------------------------ */
+/*Definicion*/
+.definition{
+    padding: 20px;
+    margin-top: 20px;
+    width: 300px;
+    height: 180px;
+    border-style: solid;
+}
+.definition h3{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.definition button{
+    margin-left: 20px;
+    box-shadow: 3px 3px 0px black;
+    width: 200px;
+    height: 35px;
+    background-color: #93c47d;
+}
+.definition button:hover{
+    filter: brightness(1.2);
+}
+/*-----------------------*/

@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.flex-conteiner{
+    width: 1000px;
+    margin: 0 auto;
+    
+}
+.user-card{
+    width: 100%;
+    background-color: #fff;
+    border: 2px solid #999;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    overflow: hidden;  
+}
+.portada{
+    background-color: #17a2b8;
+    height: 125px;
+    margin-bottom: 70px;
+      
+}
+.cuerpo{
+    padding: 20px;
+}
+h1,h2,h3,p {
+    margin: 20px 0px;
+}
+.perfil {
+    border-radius: 50%;
+    background-color: #fff;
+    height: 190px;
+    padding: 5px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.icono {
+    height: 20px;
+}
+
+a {
+    color: #3a81e6;
+}
+
+

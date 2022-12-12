@@ -1,0 +1,22 @@
+*{
+    font-family: cursive;
+    border-radius: 5px;
+}
+h1{
+    color: white;
+    background-color: black;
+}
+.cyan{
+    color: cyan;
+}
+h2{
+    color: white;
+    background-color: rebeccapurple;
+    text-align: center;
+}
+.blue{
+    color: darkslateblue;
+    background-color: lightskyblue;
+    text-align: right;
+    text-decoration: underline;
+}
