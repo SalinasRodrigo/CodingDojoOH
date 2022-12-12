@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>Just Dessert</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="nav-title">
+                    <h2 class="white">Just</h2><h2 class="orange">Dessert</h2>
+                </div>
+                <div class="btn">
+                    <button class="orange" onclick="eliminar(this)">Join</button>
+                    <button class="blue">Login</button>
+                </div>
+            </nav>
+            <div class="menu">
+                <div class="busqueda-lyout">
+                    <input type="text" placeholder="SEARCH" name="query" class="search">
+                    <button onclick="alerta()">GO</button>
+                </div>
+                
+                <div class="postres">
+                    <div class="imagen">
+                        <img src="imgs/cake.png" alt="pastel">
+                        <p>Cake</p>
+                    </div>
+                    <div class="imagen">
+                        <img src="imgs/cookie.png" alt="galletas">
+                        <p>Cookie</p>
+                    </div>
+                    <div class="imagen">
+                        <img src="imgs/ice-cream.png" alt="Helado">
+                        <p>Ice cream</p>
+                    </div>
+                    <div class="imagen">
+                        <img src="imgs/pie.png" alt="Pie">
+                        <p>Pie</p>
+                    </div>
+                </div>
+            </div>   
+        </header>
+        <main>
+            <div class="principal">
+                
+                <h2>Recipe of the day</h2>
+                <div class="flex-center">
+                    <img src="imgs/orange-tart.jpg" alt="Tarta de naranja">
+                </div>
+                <div class="flex">
+                    <p>Orange Te Jelly Tart</p>
+                    <div class="like">
+                        <img src="imgs/heart.png" alt="Corazon">
+                        <p onclick="aumentar(this)">68</p>
+                    </div>
+                </div>
+                <p>By: <a href="#">yuripiano</a></p>
+                <div class="flex-center">
+                    <a href="#">See Full Recipe</a>
+                </div>
+            </div>
+            <div class="lateral">
+                <h2>Recommended for you:</h2>
+                <div class="post">
+                    <img src="imgs/macarons.jpg" alt="Macarons">
+                    <div class="flex">
+                        <p>Macarons</p>
+                        <div class="like">
+                            <img src="imgs/heart.png" alt="Corazon">
+                            <p onclick="aumentar(this)">212</p>
+                        </div>
+                    </div>
+                    <p>By: <a href="#">EmilieW</a></p>
+                </div>
+                <div class="post">
+                    <img src="imgs/creme-brulee.jpg" alt="Cream brulee">
+                    <div class="flex">
+                        <p>Crème Brûlée</p>
+                        <div class="like">
+                            <img src="imgs/heart.png" alt="Corazon">
+                            <p onclick="aumentar(this)">33</p>
+                        </div>
+                    </div>
+                    <p>By: <a href="#">MarisaG</a></p>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+</body>
+</html>

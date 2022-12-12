@@ -1,0 +1,267 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+.conteiner{
+    background-color: #dddddd;
+    width: 100%;
+    height: 100%;
+}
+.flex_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex_start{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+button:hover{
+    filter: brightness(1.2);
+}
+
+
+/*Header*/
+header{
+    width: 100%;
+    height: 110px;
+}
+.live_score{
+    background-color: white;
+    width: 100%;
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mach_score{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+/*navbar*/
+.nav_bar{
+    background-color: black;
+    width: 100%;
+    height: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav_links{
+    list-style-type: none;
+    align-items:center;
+    justify-content: flex-start;
+    display: flex;
+    margin-right: 100px;
+}
+.nav_title{
+    color: white;
+    height: 49.4px;
+    width: 120px;
+    transform: skew(-20deg);
+    background-color: #cf2a27;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav_title h2{
+    transform: skew(20deg); 
+    font-size: 30px;
+}
+.nav_links a{
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    margin: 20px;
+}
+.nav_links a:before{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition:  0.5s ease-out;
+  
+}
+.nav_links a:hover:before{
+    color: white;
+    width: 101%;
+}
+.nav_btns{
+    display: flex;
+    align-items: center;
+}
+.nav_btns button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    background: black;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.nav_btns button:hover {
+    filter: invert(100%);
+}
+.nav_btns button img{
+    width: 30px;
+    height: 30px;
+}
+/*-----------------------*/
+/*Main*/
+main{
+    display: flex;
+    justify-content: center;
+}
+/*lateral blocks*/
+.top_stories{
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    width: 245px;
+    height: 240px;
+    border-radius: 10%;
+}
+.top_stories h2{
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: solid;
+}
+.top_stories p{
+    font-size: 18px;
+}
+.singinup{
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    width: 245px;
+    height: 120px;
+    border-radius: 10%;
+}
+.singinup h3, .sucribe_blcok h3{
+    margin-bottom: 10px;
+}
+.singinup_btn {
+    display: flex;
+}
+.singinup_btn button{
+    margin: 3px;
+    box-shadow: 3px 3px 0px black;
+    width: 95px;
+    height: 32px;
+}
+.singinup_btn .btn_1{
+    background-color: #2b78e4;
+}
+.singinup_btn .btn_2{
+    background-color: white;
+}
+.sucribe_blcok{
+    border-radius: 10%;
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    width: 245px;
+    height: 120px;
+}
+.sucribe_blcok button{
+    margin-top: 5px;
+    box-shadow: 3px 3px 0px black;
+    width: 190px;
+    height: 29px;
+    background-color: #ffe599;
+}
+/*--------------------*/
+/*Principal block*/
+.principal_block{
+    background-color: white;
+    margin: 20px;
+    width: 600px;
+    height: 520px;
+    padding: 0px 30px; 
+    border-radius: 5%;
+}
+/*live header*/
+.live_head{
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    width: 600px;
+    height: 60px;
+}
+.live_head .circle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #cf2a28;
+}
+.live_head .red{
+    margin-left: 10px;
+    color: #cf2a28;
+}
+.live_head h2{
+    margin-right: 20px;
+    font-size: 32px;
+}
+/*-----------*/
+/*live main*/
+.live_main{
+    margin: 10px;
+    height: 327px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: solid;
+}
+.vs{
+    width: 200px;
+    padding: 35px;
+}
+.vs h2{
+    font-size: 32px;
+    margin-bottom: 60px;
+}
+.vs p{
+    margin-bottom: 75px;
+    text-align: center;
+}
+.Team{
+    height: 320px;
+    margin-bottom: 20px;
+}
+.Team img{
+    width: 150px;
+    height: 150px;
+}
+.Team h5{
+    font-size: 18px;
+}
+.Team h2{
+    font-size: 35px;
+}
+.name_1{
+    color: #058e9e;
+}
+.name_2{
+    color: #e32432;
+}
+.score_1,.score_2{
+    font-size: 55px;
+}
+/*------------*/
+/*live footer*/
+.live_footer {
+    margin-top: 20px;
+    font-size: 18px;
+}
+/*--------------*/
+/*-------------------------*/
+/*------------------------------*/

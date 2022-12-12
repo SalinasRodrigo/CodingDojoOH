@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Dojo Sports News Network</title>
+</head>
+<body>
+    <div class="conteiner">
+        <div class="conteiner">
+            <header>
+                <div class="live_score">
+                    <h2>Live Score</h2>
+                    <div class="mach_score">
+                        <p>SCJ Ninjas - 134</p>
+                        <p>NS Pirates - 159</p>
+                    </div>
+                    <div class="mach_score">
+                        <p>CHI Samurais - 0</p>
+                        <p>TLU Wizards - 0</p>
+                    </div>
+                    <div class="mach_score">
+                        <p>BOS Hackers - 13</p>
+                        <p>TYO Youkai - 37</p>
+                    </div>
+                    <div class="mach_score">
+                        <p>Boi Knights - 5</p>
+                        <p>SEA Sea Lions - 11</p>
+                    </div>
+                </div>
+                <div class="nav_bar">
+                    <ul class="nav_links">
+                        <li class="nav_title"><h2>DNNS</h2></li>
+                        <li><a href="#">Football</a></li>
+                        <li><a href="#">Basketball</a></li>
+                        <li><a href="#">Baseball</a></li>
+                        <li><a href="#">Soccers</a></li>
+                        <li><a href="#">More...</a></li>
+                    </ul>  
+                    <div class="nav_btns">
+                        <button class="search"><img src="assets/search-light.png" alt="icono de busqueda"></button>
+                        <button class="burger "><img src="assets/hamburger-light.png" alt="icono de menu(burger)"></button>
+                        <button class="profile"><img src="assets/user-circle-light.png" alt="icono de perfil"> </button>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div class="lateral_blocks">
+                    <div class="top_stories">
+                        <h2>Top Stories</h2>
+                        <p>Ninjas up big in 5th best sports cities Choi joins
+                            Hall of FAme Tournamente inderway Samurai at Wizard
+                        </p>
+                    </div>
+                    <div class="singinup">
+                        <h3>Customize your DSNN</h3>
+                        <div class="flex_center">
+                            <div class = "singinup_btn">
+                                <button class="btn_1">Sing In</button>
+                                <button class="btn_2">Sing Up</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sucribe_blcok">
+                        <h3>Never miss a play</h3>
+                        <div class="flex_center">
+                            <button onclick="eliminar()">Subscribe</button>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="principal_block">
+                    <div class = "live_head">
+                        <div class="circle"></div>
+                        <h2 class="red">Live</h2>
+                        <h2>Ninjas leading Pirates</h2>
+                    </div>
+                    <div class="live_main">
+                        <div class="Team">
+                            <div class="flex_center">
+                                <img src="assets/sjc-ninjas.png" alt="Logo de los ninjas">
+                            </div>
+                            <div class="flex_center">
+                                <h5>San Jose</h5>
+                            </div>
+                            <div class="flex_center">
+                                <h2 class="name_1">Ninjas</h2>
+                            </div>
+                            <div class="flex_center">
+                                <p>(10 W - 3 L)</p>
+                            </div>
+                            <div class="flex_center">
+                                <p class="score_1" onclick="aumentar(this)">314</p>
+                            </div>
+                        </div>
+                        <div class="vs">
+                            <div class="flex_center">
+                                <h2>VS</h2>
+                            </div>
+                            <div class="flex_center">
+                                <p>0:13 remaining 5th period</p>
+                            </div>   
+                        </div>
+                        <div class="Team">
+                            <div class="flex_center">
+                                <img src="assets/ns-pirates.png" alt="Logo de los ninjas">
+                            </div>
+                            <div class="flex_center">
+                                <h5>Nova Scotia</h5>
+                            </div>
+                            <div class="flex_center">
+                                <h2 class="name_2">Pirates</h2>
+                            </div>
+                            <div class="flex_center">
+                                <p>(12 W - 2 L)</p>
+                            </div>
+                            <div class="flex_center">
+                                <p class="score_2" onclick="aumentar(this)">156</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="live_footer">
+                        <p>A conservative match between the two top-performing side in the
+                        Central League Division whith a number 1 seed at stake... 
+                        <a href="#">get live updates</a></p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
