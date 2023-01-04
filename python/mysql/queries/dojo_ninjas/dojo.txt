@@ -1,0 +1,50 @@
+show databases;
+
+use dojo_esquema;
+
+show tables;
+
+desc dojos;
+desc ninjas;
+
+ALTER TABLE ninjas
+MODIFY COLUMN created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+MODIFY COLUMN updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+insert into dojos (name)
+ values ('dojo_patito'),
+ ('dojo_chanchito'), 
+ ('dojo_pepe');
+ 
+select * from dojos;
+
+delete from dojos where id = 1;
+delete from dojos where id = 2;
+delete from dojos where id = 3;
+
+insert into dojos (name)
+ values ('dojo_patito'),
+ ('dojo_chanchito'), 
+ ('dojo_pepe');
+
+insert into ninjas (dojo_id, frist_name, last_name, age)
+ values (4, 'juanito', 'perez', 12),
+ (4, 'luis', 'martinez', 14), 
+ (4, 'pepito', 'gonzales', 11);
+
+insert into ninjas (dojo_id, frist_name, last_name, age)
+ values (5, 'rodrigo', 'salinas', 21),
+ (5, 'aldo', 'salinas', 23), 
+ (5, 'luis', 'lopez', 21);
+
+insert into ninjas (dojo_id, frist_name, last_name, age)
+ values (6, 'maximiliano', 'caceres', 10),
+ (6, 'mateo', 'penayo', 21), 
+ (6, 'diego', 'alcaraz', 21);
+
+select * from ninjas;
+
+select * from ninjas where dojo_id = 4;
+select * from ninjas where dojo_id = 6;
+select dojos.id, dojos.name from ninjas 
+left join  dojos on dojos.id = ninjas.dojo_id where ninjas.id=9;

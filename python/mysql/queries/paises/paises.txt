@@ -1,0 +1,62 @@
+show databases;
+
+use world;
+
+show tables;
+
+desc cities;
+desc countries;
+desc languages;
+
+select * from countries;
+select * from cities;
+select * from languages;
+
+-- ¿Qué consulta ejecutarías para obtener todos los países que hablan esloveno?
+select countries.name, languages.language, languages.percentage from countries
+JOIN languages ON countries.id = languages.country_id
+where languages.language = 'Slovene'
+order by languages.percentage desc; 
+
+select countries.name , cities.name from countries
+JOIN cities ON countries.id = cities.country_id
+order by countries.name;
+
+-- ¿Qué consulta ejecutarías para mostrar el número total de ciudades de cada país?
+select countries.name , count(cities.id) as num_of_cities from countries
+JOIN cities ON countries.id = cities.country_id
+group by countries.id
+order by num_of_cities desc;
+
+-- ¿Qué consulta ejecutarías para obtener todos ciudades de México con una población mayor a 500,000?
+select countries.name, cities.name, cities.population from countries
+JOIN cities ON countries.id = cities.country_id
+where countries.name = 'Mexico' and cities.population>500000
+order by cities.population desc;
+
+-- ¿Qué consulta ejecutarías para obtener todos los idiomas en cada país con un porcentaje de habla mayor a 89%?
+select countries.name, languages.language, languages.percentage from countries
+JOIN languages ON countries.id = languages.country_id
+where languages.percentage  > 89
+order by languages.percentage desc;
+
+-- ¿Qué consulta ejecutarías para obtener todos los países con un área de superficie menor a 501 y
+-- población mayor a 100,000?  
+select name, surface_area, population from countries
+where surface_area < 501 and population > 100000;
+
+-- ¿Qué consulta ejecutarías para obtener países solo con monarquía constitucional,
+-- un capital superior a 200 y una esperanza de vida mayor a 75 años? 
+select name, government_form, capital, life_expectancy from countries
+where government_form = 'Constitutional Monarchy' and capital > 200 and life_expectancy > 75;
+
+-- ¿Qué consulta ejecutarías para obtener todas las ciudades de Argentina dentro del distrito
+-- de Buenos Aires con una población mayor a 500,000 habitantes?
+select countries.name, cities.name, cities.district, cities.population from countries
+JOIN cities ON countries.id = cities.country_id
+where cities.country_code = 'ARG' and cities.district = 'Buenos Aires' and cities.population > 500000;
+
+-- ¿Qué consulta ejecutarías para resumir el número de países en cada región? 
+select region, count(region) as num_countries from countries
+group by region
+order by num_countries desc;

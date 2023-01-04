@@ -1,0 +1,61 @@
+show databases;
+
+use amistades_esquema;
+
+show tables;
+
+desc users;
+desc friendships;
+
+ALTER TABLE users
+MODIFY COLUMN created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+MODIFY COLUMN updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+insert into users (frist_name, last_name)
+ values ('Jane', 'Austen'),
+ ('Emily', 'Dickinson'), 
+ ('Fyodor', 'Dostoevsky'),
+ ('William', 'Shakespeare'),
+ ('Lau', 'Tzu'),
+ ('Rodrigo', 'Salinas');
+ 
+select * from users;
+
+insert into friendships (user_id, friend_id) values
+(1, 2),(1, 4),(1, 6),
+(2, 1),(2, 3),(2, 5),
+(3, 2),(3, 5),
+(4, 3),
+(5, 1),(5, 6),
+(6, 2),(6, 3);
+
+select * from friendships;
+
+SELECT users.frist_name, users.last_name, user2.frist_name as friend_frist_name, user2.last_name as friend_last_name FROM users 
+JOIN friendships ON users.id = friendships.user_id 
+LEFT JOIN users as user2 ON user2.id = friendships.friend_id;
+
+SELECT users.frist_name, users.last_name, user2.frist_name as friend_frist_name, user2.last_name as friend_last_name FROM users 
+JOIN friendships ON users.id = friendships.user_id 
+LEFT JOIN users as user2 ON user2.id = friendships.friend_id 
+where users.id = 1;
+
+select count(*) from friendships;
+
+SELECT count(user2.id) as number_of_friendships, users.frist_name, users.last_name FROM users 
+JOIN friendships ON users.id = friendships.user_id 
+LEFT JOIN users as user2 ON user2.id = friendships.friend_id
+group by users.id;
+
+SELECT count(user2.id) as number_of_friendships, users.frist_name, users.last_name FROM users 
+JOIN friendships ON users.id = friendships.user_id 
+LEFT JOIN users as user2 ON user2.id = friendships.friend_id
+group by users.id
+order by number_of_friendships desc
+limit 1;
+
+SELECT user2.frist_name as friend_frist_name, user2.last_name as friend_last_name FROM users 
+JOIN friendships ON users.id = friendships.user_id 
+LEFT JOIN users as user2 ON user2.id = friendships.friend_id 
+where users.id = 3
+order by friend_frist_name;

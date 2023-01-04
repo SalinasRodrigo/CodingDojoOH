@@ -1,0 +1,67 @@
+show databases;
+
+use libros_esquema;
+
+show tables;
+
+desc books;
+desc users;
+desc favorites;
+
+ALTER TABLE users
+MODIFY COLUMN created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+MODIFY COLUMN updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+insert into users (frist_name, last_name)
+ values ('Jane', 'Austen'),
+ ('Emily', 'Dickinson'), 
+ ('Fyodor', 'Dostoevsky'),
+ ('William', 'Shakespeare'),
+ ('Lau', 'Tzu');
+ 
+select * from users;
+
+insert into books (title, num_page)
+ values ('C Sharp', 500),
+ ('Java', 600), 
+ ('Python', 1000),
+ ('PHP', 548),
+ ('Ruby', 700);
+
+select * from books;
+
+UPDATE books
+SET title = 'C#'
+WHERE id=1;
+
+UPDATE users
+SET frist_name = 'Bill'
+WHERE id=4;
+
+insert into favorites (user_id, book_id) values
+(1, 1),(1, 2),
+(2, 1),(2, 2),(2, 3),
+(3, 1),(3, 2),(3, 3),(3, 4),
+(4, 1),(4, 2),(4, 3),(4, 4),(4, 5);
+
+select * from books 
+left join  favorites on books.id = favorites.book_id 
+left join  users on users.id = favorites.user_id 
+where books.id = 3;
+
+delete from favorites 
+where user_id = 2
+and book_id = 3;
+
+insert into favorites (user_id, book_id) values
+(5, 2);
+
+select * from users 
+left join  favorites on users.id = favorites.user_id 
+left join  books on books.id = favorites.book_id 
+where users.id = 3;
+
+select * from books 
+left join  favorites on books.id = favorites.book_id 
+left join  users on users.id = favorites.user_id 
+where books.id = 5;
