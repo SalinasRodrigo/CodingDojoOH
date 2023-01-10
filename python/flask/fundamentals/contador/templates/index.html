@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Counter</h1>
+    <p>{{session['num']}}</p>
+    <div class="centrar">
+        <div class="botones">
+            <a href="/contador">
+                <button>Click</button>
+            </a>
+            <form action='/mas_dos' method='post'>
+                <button>+2</button>
+            </form>
+            <form action='/destroy_session' method='post'>
+                <button>reset</button>
+            </form>
+            <form action='/incremento' method='post'>
+                <label for="incremento">Incremento:</label>
+                <input class="incremento" type="number" name="incremento">
+                <input type='submit' value='ok'>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

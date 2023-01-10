@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de numeros</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+</head>
+<body>
+    <div class="container mt-3">
+        <h1 class="text-center">Welcome to the Great Number Game!!</h1>
+        <p class="text-center">I'm thinking of a number between 1 and 100</p>
+        <div class="centrar">
+            {%if session['correcto']==0 and session['intentos']<=6%}
+                <div class="respuesta bg-success text-center p-5">
+                    <h2 class="text-white text-center">{{num}} was the number!! Intentos: {{intentos}}</h2>
+                    <div class="centrar">
+                        <form action='/reset' method='post'>
+                            <button>Play again</button>
+                        </form>
+                    </div>
+                </div>
+            {%elif session['correcto']==1 and session['intentos']<6%}
+                <div class="respuesta centrar bg-danger  text-center p-5">
+                    <h2 class="text-white">To low!! Intentos: {{intentos}}</h2>
+                </div>
+            {%elif session['correcto']==2 and session['intentos']<6%}
+                <div class="respuesta centrar bg-danger  text-center p-5">
+                    <h2 class="text-white">To high!! Intentos: {{intentos}}</h2>
+                </div>
+            {%elif session['intentos']>=6%}
+                <div class="respuesta bg-warning text-center p-5">
+                    <h2 class="text-dark text-center">Perdiste, vuelve a intentarlo =( {{num}}</h2>
+                    <div class="centrar">
+                        <form action='/reset' method='post'>
+                            <button>Play again</button>
+                        </form>
+                    </div>
+                </div>
+            {%else%}
+            <div></div>
+            {%endif%}
+        </div>
+        <div class="centrar mt-3">
+            <div class="gess bg-dark rounded p-4">
+                <h4 class="text-warning text-center">Take a gesss!!</h4>
+                <div class="centrar">
+                    <form action='/gess' method='post'>
+                    <input type="number" name="gess">
+                    <input class="bg-warnig text-dark bg-warning rounded" type='submit' value='Gess'>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta Dojo</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/bootstrap.css')}}">
+</head>
+<body>
+    <div class="conteiner centrar">
+        <div class="bloque bg-dark">
+            <h2 class="text-warning">Submitted Info</h2>
+            <div class="d-flex justify-content-between text-white">
+                <p>Name:</p>
+                <p>{{name}}</p>
+            </div>
+            <div class="d-flex justify-content-between text-white"">
+                <p>Dojo Location:</p>
+                <p>{{location}}</p>
+            </div>
+            <div class="d-flex justify-content-between text-white"">
+                <p>Favorite language:</p>
+                <p>{{language}}</p>
+            </div>
+            <div class="d-flex justify-content-between text-white"">
+                <p>Coment:</p>
+                <p>{{coment}}</p>
+            </div>
+            <div class="final">
+                <a class="row btn bg-warning text-dark" href="/encuesta">Go Back</a>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero de ajedrez</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="centrar">
+        <h1 style="background-color: {{color1}}; color:{{color2}};">***Tablero de ajedrez***</h1>
+    </div>
+    <div class="centrar">
+        <div class="tablero">
+            {%for i in range(0, num1) %}
+                <div class="fila">
+                    {%if i%2==0%}
+                        {%for j in range(0, num2) %}
+                            {%if (j%2==0)%}
+                                <div class="casilla" style="background-color: {{color1}};"></div>
+                            {%else%}
+                                <div class="casilla" style="background-color: {{color2}};"></div>
+                            {%endif%}
+                        {%endfor%}
+                    {%else%}
+                        {%for j in range(0, num2) %}
+                            {%if (j%2==0)%}
+                                <div class="casilla" style="background-color: {{color2}};"></div>
+                            {%else%}
+                                <div class="casilla" style="background-color: {{color1}};"></div>
+                            {%endif%}
+                        {%endfor%}
+                    {%endif%}
+                </div>
+            {%endfor%}
+        </div>
+    </div>
+</body>
+</html>

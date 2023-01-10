@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oro Ninja</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/bootstrap.css')}}">
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex m-2">
+            <p class="m-2">Your Gold</p>
+            <p class="caja m-2 border border-dark">{{oro}}</p>
+            <form method="post" action="/reset">
+                <input class="m-2" type="submit" value="Reset">
+            </form>
+        </div>
+        <div class="d-flex  justify-content-around">
+            <div class="lugar border border-dark p-4">
+                <h3 class="centrar">Farm</h3>
+                <p class="centrar">(earns 10-20 golds)</p>
+                <form class="centrar" method="post" action="/process">
+                    <input type="hidden" name="which_form" value="farm">
+                    <input  type="submit" value="Find Gold">
+                </form>
+            </div>
+            <div class="lugar border border-dark p-4">
+                <h3 class="centrar">Cave</h3>
+                <p class="centrar">(earns 5-10 golds)</p>
+                <form class="centrar" method="post" action="/process">
+                    <input type="hidden" name="which_form" value="cave">
+                    <input  type="submit" value="Find Gold">
+                </form>
+            </div>
+            <div class="lugar border border-dark p-4">
+                <h3 class="centrar">House</h3>
+                <p class="centrar">(earns 2-5 golds)</p>
+                <form class="centrar" method="post" action="/process">
+                    <input type="hidden" name="which_form" value="house">
+                    <input type="submit" value="Find Gold">
+                </form>
+            </div>
+            <div class="lugar border border-dark p-4">
+                <h3 class="centrar">Casino</h3>
+                <p class="centrar">(earns/takes 0-50 golds)</p>
+                <form class="centrar" method="post" action="/process">
+                    <input type="hidden" name="which_form" value="casino">
+                    <input type="submit" value="Find Gold">
+                </form>
+            </div>
+        </div>
+        <div>
+            <p>Activities:</p>
+            <div class="actividades border border-dark">
+                {%for message in lineas%}
+                    {{ message|safe }}
+                {%endfor%}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

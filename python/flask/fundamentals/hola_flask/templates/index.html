@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Pagina de perfil</title>
+</head>
+<body>
+    <div class="conteiner">
+        <div class="nav">
+            <ul class="nav-links">
+                <li><h1 class="nav-title">Perfil</h1></li>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#" class="active">My Profile</a></li>
+                <li><a href="#">Encontrar conexiones</a></li>
+            </ul>  
+            <button class="btn">Cerrar sesión</button>
+        </div>
+        <div class="pagina">
+            <div class="pag1">
+
+                <div class="perfil">
+                    <div class="cabecera">
+                        <img src="profile.png" class="perfil" alt="Imagen de perfil">
+                    </div>
+                    <div class="info">
+                        <h1>Rodrigo Salinas</h1>
+                        <h3>
+                            <img src="{{ url_for('static', filename='icons/map-marker.png') }}" alt="Icono de ubicación"> Fernando de la mora
+                        </h3>
+                        <p>Developer|Engineer|Problem Solver</p>
+                        <p>Oro en el lol, master en el web development</p>
+                        
+                        <a href="#">
+                            <img src="{{ url_for('static', filename='icons/gear.png') }}" alt="Icono de edición">editar perfil
+                        </a>
+                    </div>
+                </div>
+
+                <div class="educacion">
+                    <div class="cabecera4">
+                        <h2>Educación</h2>
+                    </div>
+                    <div class="cuerpo3">
+                        <h2>Coding dojo - Full Stack Bootcamp</h3>
+                        <em>Nov 2022 - Feb 2023</em>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea fugit eaque nobis voluptates corrupti aliquid repellendus, ipsa pariatur adipisci explicabo impedit, necessitatibus aperiam architecto voluptas expedita ratione dolor non in?</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="pag2">
+                <div class="solicitudes">
+                    <header class="cabeza2">
+                        <div class="numero">2</div>
+                        <h2>Solicitudes de coneccion</h2>
+                    </header>
+                    <div class="cuerpo1">
+                        <div class="solicitud">
+
+                            <div class="perfil-solicitud">
+                                <img src="images/todd-s.jpg" alt="perfil de todd">
+                                <h3>Todd E.</h3>
+                            </div>
+
+                            <div class="opciones">
+                                <button><img src="icons/accept-circle.png" alt="icono de aceptar"></button>
+                                <button><img src="icons/close-circle.png" alt="icono de rechazar"></button>
+                            </div>
+
+                        </div>
+                        <div class="solicitud">
+                            <div class="perfil-solicitud">
+                                <img src="images/phil-s.jpg" alt="perfil de Phil">
+                                <h3>Phil K.</h3>
+                            </div>
+
+                            <div class="opciones">
+                                <button><img src="icons/accept-circle.png" alt="icono de aceptar"></button>
+                                <button><img src="icons/close-circle.png" alt="icono de rechazar"></button>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="conecciones">
+                    <div class="cabeza3">
+                        <div class="numero">500+</div>
+                        <h2>Tus coneccion</h2>
+                    </div>
+                    <div class="cuerpo1">
+                        <div class="coneccion">
+                            <div class="perfil-coneccion">
+                                <img src="images/adrien-s.jpg" alt="perfil de todd">
+                                <h3>Adriend D.</h3>
+                            </div>
+                        </div>
+                        <div class="coneccion">
+                            <div class="perfil-coneccion">
+                                <img src="images/anne-s.jpg" alt="perfil de Phil">
+                                <h3>Anne J.</h3>
+                            </div>
+                        </div>
+                        <div class="coneccion">
+                            <div class="perfil-coneccion">
+                                <img src="images/alayne-s.jpg" alt="perfil de Phil">
+                                <h3>Ayalen T.</h3>
+                            </div>
+                        </div>
+                        <div class="coneccion">
+                            <div class="perfil-coneccion">
+                                <img src="images/arry-s.jpg" alt="perfil de Phil">
+                                <h3>Arry Y.</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vermas">
+                        <a href="#">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

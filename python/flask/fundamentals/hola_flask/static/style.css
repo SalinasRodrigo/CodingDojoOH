@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.conteiner {
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+/*Navegador*/
+.nav{
+    background-color: #333333;
+    width: 100%;
+    height: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.nav-title{
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.nav-links{
+    list-style-type: none;
+    align-items:center;
+    justify-content: flex-start;
+    display: flex;
+}
+.nav h1{
+    margin: 20px;
+}
+.nav-links a{
+    color: rgba(255, 255, 255, 0.74);
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    margin: 20px;
+}
+.nav-links a:focus, .nav-links a:hover{
+    color: white;
+}
+.nav-links a:before{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition:  0.5s ease-out;
+
+}
+.nav-links a:hover:before{
+    color: white;
+    width: 101%;
+}
+.btn{
+    box-shadow: 3px 3px 0px black;
+    width: 100px;
+    height: 30px;
+    background-color: #17a2b8;
+    
+}
+.btn:hover{
+    filter: brightness(1.2);
+}
+/*-----------------------------*/
+
+/*Pagina*/
+.pagina{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+/*Perfil*/
+.perfil{
+    margin: 25px;
+    width: 550px;
+    height: 400px;
+    
+}
+.cabecera{
+    width: 100%;
+    height: 25%;
+    background-color: #17a2b8;
+}
+
+.cabecera img{
+    border-radius: 50%;
+    background-color: #fff;
+    height: 100px;
+    width: 100px;
+    padding: 5px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.info{
+    padding-top: 20px;
+    padding-bottom: 100px;
+    border-style: solid;
+    border-top: none;
+    border-color: gray;
+}
+.info h1,.info h3,.info p,.info a{
+    margin: 10px;
+}
+.info img{
+    height: 17px;
+    width: 15px;
+}
+a img{
+    margin-right: 10px;
+}
+/*----------------------------------*/
+
+/*Educación*/
+.educacion{
+    margin: 25px;
+    width: 550px;
+    height: 400px;
+    background-color:white;
+}
+.cabecera4{
+    width: 100%;
+    height: 60px;
+    color: white;
+    display: flex;
+    align-items: center;
+    
+    background-color: #333333;
+}
+.cabecera4 h2{
+    margin: 20px;
+}
+.cuerpo3{
+    padding: 20px;
+    border-style: solid;
+    border-top: none;
+    border-color: gray;
+
+}
+.cuerpo3 h2, .cuerpo3 em{
+    padding-bottom: 10px;
+}
+.cuerpo3 p{
+    padding-top: 10px;
+}
+.cuerpo3 em{
+    color: #666666;
+}
+/*----------------------------------*/
+
+/*Solicitud de conecciones*/
+.solicitudes{
+    margin: 20px;
+    width: 380px;
+    height: 250px;
+    background-color:white;
+}
+.cabeza2{
+    width: 100%;
+    height: 60px;
+    color: white;
+    display: flex;
+    align-items: center;
+    
+    background-color: #333333;
+}
+.cabeza2 .numero{
+    color: black;
+    width: 35px;
+    height: 35px;
+    margin: 20px;
+    background: #cccccc;
+    border-radius: 50%;
+    align-items:center;
+    justify-content: center;
+    display: flex;
+}
+.cuerpo1{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-style: solid;
+    border-top: none;
+    border-color: gray;
+}
+.solicitud{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    display: flex;
+}
+.perfil-solicitud{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    display: flex;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.solicitud img{
+    border-radius: 50%;
+    background-color: #fff;
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+    margin-right: 10px;
+}
+.solicitud .perfil-solicitud img{
+    border-style: solid;
+    border-color: #cccccc;
+}
+.solicitud .opciones button{
+    background-color: white;
+    border-style: none;
+}
+.solicitud .opciones button:hover{
+    filter: brightness(1.2);
+}
+.solicitud .opciones img{
+    height: 40px;
+    width: 40px;
+}
+
+
+/*---------------------------------*/
+/*Conecciones*/
+.conecciones{
+    margin: 20px;
+    width: 380px;
+    height: 600px;
+    background-color: white;
+}
+.cabeza3{
+    width: 100%;
+    height: 60px;
+    color: white;
+    display: flex;
+    align-items: center;
+    
+    background-color: #333333;
+}
+.cabeza3 .numero{
+    color: black;
+    width: 55px;
+    height: 35px;
+    margin: 20px;
+    background: #cccccc;
+    border-radius: 50%;
+    align-items:center;
+    justify-content: center;
+    display: flex;
+}
+.coneccion img{
+    border-radius: 50%;
+    background-color: #fff;
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+    margin-right: 10px;
+    border-style: solid;
+    border-color: #cccccc;
+}
+.coneccion{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    display: flex;
+}
+.perfil-coneccion{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    display: flex;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.conecciones .vermas{
+    width: 374px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-style: solid;
+    border-color: #666666;
+    border-top: none;
+}
+.vermas a{
+    margin: 20px;
+    font-size: large;
+}
