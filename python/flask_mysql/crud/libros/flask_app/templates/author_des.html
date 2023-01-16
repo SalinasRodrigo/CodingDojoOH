@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authors Show</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+</head>
+<body>
+    <div class="container p-5">
+        <div class="d-flex justify-content-around">
+            <div>
+                <h2>{{author.first_name}} {{author.last_name}}  favorites</h2>
+                <table class="table w-100 table-striped border">
+                    <tr>
+                        <th class="border">Title</th>
+                        <th class="border">Number of page</th>
+                    </tr>
+                    {%for book in author.books%}
+                        <tr>
+                            <td class="border">
+                                {{book.title}}
+                            </td>
+                            <td class="border">
+                                {{book.num_page}}
+                            </td>
+                        </tr>
+                    {%endfor%}
+            
+                </table>
+            </div>
+            <div>
+                <h2>Add Author's Favorite</h2>
+                <form action="/authors/{{author.id}}/process" method="POST">
+                    <div class="form-group d-flex justify-content-between align-items-cent">
+                        <label for="book_id">Book</label>
+                        <select name="book_id" >
+                            {%for book in all_books%}
+                                <option value="{{book.id}}">{{book.title}}</option>
+                            {%endfor%}
+                        </select>
+                    </div>
+                    <input type="submit" value="Add">
+                </form>
+            </div>
+        </div>
+        <a href="/authors">Home</a>
+    </div>
+</body>
+</html>

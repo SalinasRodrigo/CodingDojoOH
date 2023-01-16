@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojos</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>New Ninja</h2>
+        <div class="w-25 pt-3 pb-3">
+            <form action="/ninja/process" method="POST">
+                <div class="form-group d-flex justify-content-between align-items-cente">
+                    <label for="dojos">Dojo: </label>
+                    <select name="dojo_id">
+                        {%for dojo in all_dojos%}
+                            <option value="{{dojo.id}}">{{dojo.name}}</option>
+                        {%endfor%}
+                    </select>
+                </div>
+                <div class="form-group d-flex justify-content-between align-items-cente">
+                    <label for="first_name">First Name: </label>
+                    <input type="text" name="first_name">
+                </div>
+                <div class="form-group d-flex justify-content-between align-items-cente">
+                    <label for="last_name">Last Name: </label>
+                    <input type="text" name="last_name">
+                </div>
+                <div class="form-group d-flex justify-content-between align-items-cente">
+                    <label for="age">Age: </label>
+                    <input type="number" name="age">
+                </div>
+                <input type="submit" value="Create">
+            </form>
+        </div>
+        <a href="/dojos">Home</a>
+    </div>
+</body>
+</html>

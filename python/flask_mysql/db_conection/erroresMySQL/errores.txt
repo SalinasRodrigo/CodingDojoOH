@@ -1,0 +1,14 @@
+OperationalError
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+
+-Elimine el password de la conección
+
+TypeError
+TypeError: 'NoneType' object is not iterable
+
+-elimine select e incert de query_db
+
+NameError
+NameError: name 'pymysql' is not defined
+
+-elimine el import de la libreria pymysql.cursors

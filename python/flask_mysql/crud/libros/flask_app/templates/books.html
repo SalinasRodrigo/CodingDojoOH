@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <title>Books</title>
+</head>
+<body>
+    <div class="container d-flex justify-content-around pt-5 w-50">
+        <div class="w-50">
+            <h2>New Books</h2>
+            <form action="/books/process" method="POST">
+                <div class="form-group">
+                    <label for="title" class="mr-4">Title:</label>
+                    <input type="text" name="title">
+                </div>
+                <div class="form-group">
+                    <label for="num_page" class="mr-4">Number of page:</label>
+                    <input type="number" name="num_page">
+                </div>
+                <input type="submit" value="Create" class="btn btn-secondary">
+            </form>
+        </div>
+        <div class="w-50">
+            <h2>All Books</h2>
+            <div class="border border-dark pl-3 pt-2 pb-2 mt-3 mb-3" >
+                {%for book in all_books%}
+                <div>
+                    <a href="/books/{{book.id}}">{{book.title}}</a>
+                </div>       
+                {%endfor%}
+            </div>
+            <a href="/authors">Home</a>
+        </div>
+    </div>
+</body>
+</html>
