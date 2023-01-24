@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <title>Wall one</title>
+</head>
+<body>
+    <div class="navbar navbar-light bg-light justify-content-between mb-2">
+        <h2>
+            CodingDojo Wall
+        </h2>
+        <div class="d-flex">
+            <h2>Welcome {{user_session.first_name}}</h2>
+            <form action="/logout/process", method="POST">
+                <input type="submit" class="btn btn-outline-danger ml-2" value="Logout">
+            </form>
+        </div>
+    </div>
+    <div class="d-flex justify-content-around">
+        <div class="caja">
+            <h3 class="mb-3">{{num_messages}} Message(s) for you</h3>
+            {%for message in messages%}
+                <h5>{{message.remitent.first_name}} said ({{message.time_span()}}):</h5>
+                <p>"{{message.message}}"</p>
+                <form action="/delete/process/{{message.id}}" class="d-flex justify-content-end" method="POST">
+                    <input type="submit" class="btn btn-danger ml-2" value="delete">
+                </form>
+            {%endfor%}
+        </div>
+        <div class="caja">
+            <h3>Send a message</h3>
+            <p class="alert alert-primary">You have sent {{num_send}} messages so far.</p>
+            {%with messages = get_flashed_messages(category_filter=["message"])%}
+                {%if messages%}
+                    {%for message in messages%}
+                        <p class="alert alert-danger text-center">{{message}}</p>
+                    {%endfor%}
+                {%endif%}
+            {%endwith%}
+            <div class="d-flex flex-column">
+                {%for user in all_users%}
+                    {%if user.id != user_session.id%}
+                        <form action="/message/process/{{user.id}}/{{user_session.id}}" method="POST">
+                            <div class="d-flex justify-content-around m-3">
+                                <label for="message">{{user.first_name}}</label>
+                                <textarea name="message"></textarea>
+                                <input type="submit" class="h-100 btn btn-primary" value="Send">
+                            </div>
+                        </form>
+                    {%endif%}
+                {%endfor%}
+
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+</html>

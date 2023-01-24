@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <title>Recipe Share</title>
+</head>
+<body>
+    <div class="navbar navbar-light bg-light justify-content-between mb-2">
+        <h2>Welcome {{user_session.first_name}}</h2>
+    </div>
+    <div>
+        <div class="d-flex justify-content-between m-2">
+            <h5>All recipes</h5>
+            <div class="d-flex">
+                <a class="m-2" href="/recipe/created">+Created</a>
+                <a class="m-2" href="/logout/process" method="POST">Log Out</a>
+            </div>
+        </div>
+        <div class="container">
+            <table class="table">
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Under
+                    </th>
+                    <th>
+                        Posted by
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                </tr>
+                    {%for recipe in recipe_user%}
+                        <tr>
+                            <td>
+                                {{recipe.name}}
+                            </td>
+                            <td>
+                                {{recipe.time}}
+                            </td>
+                            <td>
+                                {{recipe.user.first_name}}
+                            </td>
+                            <td class="d-flex">
+                                <a href="/recipe/{{recipe.id}}">view recipe</a>
+                                {%if recipe.user_id == user_session.id%}
+                                    <p class="pl-2 pr-2">|</p>
+                                    <a href="/recipe/update/{{recipe.id}}">Edit</a>
+                                    <p class="pl-2 pr-2">|</p>
+                                    <a href="/delete/process/{{recipe.id}}">Delete</a>
+                                {%endif%}
+                            </td>
+                        </tr>
+                    {%endfor%}
+            </table>
+        </div>
+    </div>
+</body>
+</html>

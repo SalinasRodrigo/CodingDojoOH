@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta Dojo</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/bootstrap.css')}}">
+</head>
+<body>
+    <div class="container centrar">
+        <div class="bloque bg-dark">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="text-white">{{message}}</p>  
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <h2 class="text-warning mb-3">Sojo Suvery</h2>
+            <form action='/process' method='post'>
+                <label class="row text-white" for='name'>Your Name:</label>
+                <input class="row mb-3 w-100" type='text' name='name' >
+                <label class="row text-white" for='ubicacion'>Dojo Location:</label>
+                <select class="row mb-3 w-100" name='ubicacion'>
+                    <option value=''>--Select a Location--</option>
+                    <option value='Chicago'>Chicago</option>
+                    <option value='San Jose'>San Jose</option>
+                    <option value='Online'>Online</option>
+                    <option value='Seatel'>Seatel</option>
+                </select>
+                <label class="row text-white" for='idioma'>Favorite language:</label>
+                <select class="row mb-3 w-100" name='idioma'>
+                    <option value=''>--Select a Language--</option>
+                    <option value='Python'>Python</option>
+                    <option value='Java'>Java</option>
+                    <option value='C#'>C#</option>
+                    <option value='Rubi'>Rubi</option>
+                    <option value='Rust'>Rust</option>
+                </select>
+                <label class="row text-white" for="comentatio">Coment:</label>
+                <textarea class="caja row mb-3 w-100" name="comentario">
+                </textarea>
+                <div class="final">
+                    <input class="row bg-warning text-dark" type='submit' value='submit'>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

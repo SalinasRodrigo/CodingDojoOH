@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <title>Success</title>
+</head>
+<body>
+    <div class="container p-5">
+        <div>
+            {%with messages = get_flashed_messages()%}
+            {%if messages%}
+                {%for message in messages%}
+                    <p class="bg-success text-white border text-center w-25">{{message}}</p>
+                {%endfor%}
+            {%endif%}
+        {%endwith%}
+        </div>
+        <h2>Email Address Entered</h2>
+        <div>
+            {%for correo in all_emails%}
+                <p>{{correo.email}} {{correo.updated_at}}</p>
+                <form action="/delete/process/{{correo.id}}" method="POST">
+                    <input type="submit" value="Delete">
+                </form>
+            {%endfor%}
+        </div>
+        <a href="/email">Home</a>
+    </div>
+</body>
+</html>

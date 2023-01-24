@@ -59,6 +59,26 @@ class User:
         return users
 
     @classmethod
+    def get_all_user_with_friends( cls ):
+        query = ("SELECT first_name FROM users "+
+                "JOIN friendships ON users.id = friendships.user_id "+
+                "LEFT JOIN users AS friend ON friend.id = friendships.friend_id;")
+        results = connectToMySQL('amistades_esquema').query_db( query )
+        users = []
+        for u in results:
+            user = cls(u)
+            friend_data = {
+                "id" : u["friend.id"],
+                "first_name" : u["friend.first_name"],
+                "last_name" : u["friend.last_name"],
+                "created_at" : u["friend.created_at"],
+                "updated_at" : u["friend.updated_at"]
+            }
+            user.friends.append( cls( friend_data ) )
+            users.append(user)
+        return users
+
+    @classmethod
     def get_all(cls):
         query = "SELECT * FROM users;"
         users_from_db =  connectToMySQL('amistades_esquema').query_db(query)

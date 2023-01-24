@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <title>Login & Registration</title>
+</head>
+<body>
+    <div class="d-flex justify-content-between m-2">
+        <h2>Add a new recipe</h2>
+        <div class="d-flex">
+            <a class="m-2" href="/recipes">Back to recipes</a>
+            <a class="m-2" href="/logout/process" method="POST">Log Out</a>
+        </div>
+    </div>
+    <div class="container centrar">
+        <div class="p-5 caja">
+            <div class="d-flex justify-content-between m-2">
+                <h2>{{recipe.name}}</h2>
+                <p>Posted by: {{recipe.user.first_name}}</p>
+            </div>
+            <div class="border p-5">
+                <div class="d-flex">
+                    <p class="espacio1">Description:</p>
+                    <p>{{recipe.description}}</p>
+                </div>
+                <div class="d-flex">
+                    <p class="espacio2">Under 30 minutes?</p>
+                    <p>{{recipe.time}}</p>
+                </div>
+                <div class="d-flex  ">
+                    <p class="espacio3">instruction:</p>
+                    <p>{{recipe.instruction}}</p>
+                </div>
+                <div class="d-flex">
+                    <p class="espacio4">Date made:</p>
+                    <p>{{recipe.date_format()}}</p> 
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
