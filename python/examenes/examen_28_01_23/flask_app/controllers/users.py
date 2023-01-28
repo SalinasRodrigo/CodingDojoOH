@@ -55,7 +55,7 @@ def login():
 
 @app.route('/logout/process', methods=['POST'])
 def logout():
-    session.clear()
+    session.pop('user_id')
     return redirect('/')
 
 #Toughts ----------------------------------------------------------------------------------------------
