@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <title>Recipe Share</title>
+</head>
+<body>
+    <div class="bg-dark text-white p-2">
+        <div class="d-flex justify-content-between d-flex align-items-center m-2 pl-5 pr-5">
+            <h2>Welcome {{user_session.first_name}} {{user_session.last_name}}!</h2>
+            <form action="/logout/process" method="POST">
+                <input type="submit" class="btn btn-outline-warning" value="Logout">
+            </form>
+        </div>
+        {%with messages = get_flashed_messages(category_filter=["thought"])%}
+            {%if messages%}
+                {%for message in messages%}
+                    <p class="alert alert-danger text-center">{{message}}</p>
+                {%endfor%}
+            {%endif%}
+        {%endwith%}
+        <div class="m-2 pl-5 pr-5">
+            <form action="/created/process" class="d-flex w-100" method="POST">
+                <input type="text" class = "w-50" name="contents" >
+                <input type="submit" class="ml-5" value="Add Thought">
+            </form>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div>
+            {%for thought in all_thoughts%}
+                <div class="d-flex justify-content-between m-2">
+                    <a class="box_user" href="/user/{{thought.user.id}}">{{thought.user.first_name}} says:</a>
+                    <div>
+                        <p class="thought">{{thought.contents}}</p>
+                        <div class="d-flex justify-content-between">
+                            {%if thought.liked(all_likes)%}
+                                <form action="/un_like/{{thought.user.id}}/{{thought.id}}" method="POST">
+                                    <input type="submit" class="btn btn-danger" value="Un-Like">
+                                </form>
+                            {%else%}
+                                <form action="/like/{{thought.user.id}}/{{thought.id}}" method="POST">
+                                    <input type="submit" class="btn btn-primary" value="Like">
+                                </form>
+                            {%endif%}
+                            <p>{{thought.likes}} likes</p>
+                        </div>
+                    </div>
+                    {%if user_session.id == thought.user_id%}
+                        <form action="/delete/process/{{thought.id}}" method="POST">
+                            <input type="submit" class="btn-link border-0" value="Delete">
+                        </form>
+                    {%else%}
+                        <div class="separador"></div>
+                    {%endif%}
+                </div>
+            {%endfor%}
+        </div>
+    </div>
+</body>
+</html>
