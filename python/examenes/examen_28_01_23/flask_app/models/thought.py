@@ -99,9 +99,9 @@ class Thought:
             thought.likes = like.Like.get_likes_num(data)
         return thoughts
 
-    def liked(self, likes):
+    def liked(self, likes, user_id):
         for like in likes:
-            if like.user_id == self.user_id and like.thought_id == self.id:
+            if like.user_id == user_id and like.thought_id == self.id:
                 return True
         return False
 

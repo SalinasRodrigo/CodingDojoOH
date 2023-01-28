@@ -37,7 +37,7 @@
                     <div>
                         <p class="thought">{{thought.contents}}</p>
                         <div class="d-flex justify-content-between">
-                            {%if thought.liked(all_likes)%}
+                            {%if thought.liked(all_likes, user_session.id)%}
                                 <form action="/un_like/{{thought.user.id}}/{{thought.id}}" method="POST">
                                     <input type="submit" class="btn btn-danger" value="Un-Like">
                                 </form>
